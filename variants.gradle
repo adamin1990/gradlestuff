@@ -1,0 +1,77 @@
+ext {
+    basePackageName ='adamin1990.gradlestuff'
+    resAppColorName ='build_brand_primary'
+    resAppName ='build_app_name'
+    fieldShowAds = 'ADS'
+
+    paid = [
+
+            packageName : "${basePackageName}.premium",
+            appName : "Gradle Stuff Premium",
+            appColor : "#F44336",
+            showAds : "false",
+            versionName : "2.3.2",
+            versionCode : 4
+    ]
+
+
+    free =  [
+
+            packageName   : "${basePackageName}.free",
+            appName       : "Gradle Stuff",
+            appColor      : "#4CAF50",
+            showAds       : "true",
+            versionName   : "4.1.1",
+            versionCode   : 15
+    ]
+
+    promo = [
+
+            packageName   : "${basePackageName}.promo",
+            appName       : "Gradle Stuff Demo",
+            appColor      : "#9C27B0",
+            showAds       : "true",
+            versionName   : "1.0",
+            versionCode   : 1
+    ]
+
+    christmas = [
+
+            packageName   : "${basePackageName}.christmas",
+            appName       : "Gradle Stuff Christmas!",
+            appColor      : "#3C07B0",
+            showAds       : "false",
+            versionName   : "41.2",
+            versionCode   : 123
+    ]
+
+    halloween = [
+
+            packageName   : "${basePackageName}.halloween",
+            appName       : "Gradle Stuff Halloween!",
+            appColor      : "#3C03B0",
+            showAds       : "false",
+            versionName   : "0.1.2",
+            versionCode   : 5
+    ]
+
+    easter = [
+
+            packageName   : "${basePackageName}.easter",
+            appName       : "Gradle Stuff Easter!",
+            appColor      : "#3C03B0",
+            showAds       : "false",
+            versionName   : "0.2",
+            versionCode   : 3
+    ]
+
+    independence = [
+
+            packageName   : "${basePackageName}.independence",
+            appName       : "Gradle Stuff Independence!",
+            appColor      : "#0C33B0",
+            showAds       : "false",
+            versionName   : "1.2",
+            versionCode   : 32
+    ]
+}

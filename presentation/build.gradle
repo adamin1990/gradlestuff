@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "adamin1990.gradlestuff"
+        minSdkVersion 11
+        targetSdkVersion 22
+    }
+    buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors.whenObjectAdded {
+        flavor ->
+            def flavorData   = rootProject.ext[flavor.name]
+            flavor.applicationId  flavorData.packageName
+            flavor.versionCode    flavorData.versionCode
+            flavor.versionName    flavorData.versionName
+            flavor.buildConfigField 'boolean', fieldShowAds, flavorData.showAds
+            flavor.resValue       'string', resAppName, flavorData.appName
+            flavor.resValue       'color', resAppColorName,flavorData.appColor
+    }
+
+    productFlavors{
+        paid {}
+
+        free {}
+
+        promo {}
+
+        christmas {}
+
+        halloween {}
+
+        easter {}
+
+        independence {}
+    }
+
+}
+
+dependencies {
+    def presentationDependencies = rootProject.ext.presentationDependencies
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile   presentationDependencies.butterKnife
+    compile   presentationDependencies.recyclerView
+    compile   presentationDependencies.appCompat
+    compile   presentationDependencies.supportAnnotation
+    compile   presentationDependencies.rxAndroid
+    compile   presentationDependencies.rxJava
+}
